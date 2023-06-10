@@ -9,17 +9,24 @@
   src: url("/Sono-Regular.woff2") format("woff");
 }
 
-#text {
-  font-family: "Sono", Courier, monospace;
-  font-size: 3rem;
+header {
+  font-size: 1rem;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Sono";
+  margin: 1rem;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.text {
+  font-family: "Sono", Courier, monospace;
+  font-size: 1.5rem;
 }
 
 .text-body {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
   display: flex;
   align-items: center;
   margin: 1rem;
@@ -28,7 +35,13 @@
 .black {
   color: black;
   background-color: white;
-  animation: fade 0.1s linear;
+  animation: fade 0.2s linear;
+}
+
+.black-final {
+  color: black;
+  background-color: white;
+  animation: fade 1s linear;
 }
 
 @keyframes fade {

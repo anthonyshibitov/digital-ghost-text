@@ -1,6 +1,5 @@
 console.log("linked!");
 
-//const alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const alpha = "!@#$%^&*()_+-={}|:\"<>?[]\\;',./`~";
 
 function printText(string, id, delay){
@@ -20,6 +19,7 @@ function printText(string, id, delay){
     setTimeout(() => {
       let trailingChar = document.createElement('span');
       trailingChar.classList.add("black");
+
       for(let j = 0; j < 5; j++){
         setTimeout(() => {
           elementId.appendChild(trailingChar);
@@ -30,8 +30,12 @@ function printText(string, id, delay){
             }
             let random = alpha[Math.floor(Math.random() * alpha.length)];
             trailingChar.innerHTML = random;
+          } else {
           }
         }, j * (delay / 5))
+      }
+      if(i == string.length - 1){
+        trailingChar.classList.add("black-final");
       }
     }, delay * i)
   }
@@ -39,8 +43,20 @@ function printText(string, id, delay){
 
 setTimeout(() => {
   printText("I'm afraid they're gonna find you.", "text", 100);
-},0)
+}, 5000)
 
 setTimeout(() => {
-  printText("And there's nothing that I can do.", "text", 100);
-}, 5000)
+  printText("And there's nothing that I can do.", "text-2", 100);
+}, 10000)
+
+setTimeout(() => {
+  printText("A century of your priceless time.", "text", 100);
+}, 15000);
+
+setTimeout(() => {
+  printText("To commit a victimless crime.", "text-2", 100);
+}, 20000);
+
+setTimeout(() => {
+  printText("finished", "fin", 100);
+}, 25000)
